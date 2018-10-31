@@ -8,7 +8,33 @@
 			</section>
 			<section class="services">
 				<div class="container">
-					<div class="row">Serviços</div>
+				<h1>Our Services</h1>
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="services-item">
+								<?php if( is_active_sidebar( 'service-1' )){
+									dynamic_sidebar( 'service-1' );
+								}
+								?>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="services-item">
+								<?php if( is_active_sidebar( 'service-2' )){
+									dynamic_sidebar( 'service-2' );
+								}
+								?>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="services-item">
+							<?php if( is_active_sidebar( 'service-3' )){
+								dynamic_sidebar( 'service-3' );
+							}
+							?>
+							</div>
+						</div>
+					</div>
 				</div>				
 			</section>
 			<section class="middle-area">
@@ -22,7 +48,14 @@
 								// Enquanto houver posts, mostre-os pra gente
 								while( have_posts() ): the_post();
 							?>
-							<p>Conteúdo vindo do arquivo home.php</p>
+							
+
+
+
+
+
+
+							
 							<?php 
 								endwhile;
 							else:
