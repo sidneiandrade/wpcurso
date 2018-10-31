@@ -42,27 +42,46 @@
 					<div class="row">
 						    <?php get_sidebar('home'); ?>
 						<div class="news col-md-8">
-							<?php 
-							// Se houver algum post
-							if( have_posts() ):
-								// Enquanto houver posts, mostre-os pra gente
-								while( have_posts() ): the_post();
-							?>
-							
+							<div class="container">
+								<h1>Lastest News</h1>
+								<div class="row">
+									<?php
+									//Last Featured Loop
+									$featured = new WP_Query( 'post_type=post&posts_per_page=1&cat=10,3' );
+									if ( $featured->have_posts() ):
+										while ( $featured->have_posts() ): $featured->the_post();
+									?>
+									<div class="col-12">
+										<?php get_template_part( 'template-parts/content', 'featured'); ?>
+									</div>
+									<?php
+										endwhile;
+										wp_reset_postdata();
+									endif;
+									
+									//Second News Loop
+									$args = array (
+										'post_type' => 'post',
+										'posts_per_page' => 2,
+										'category__not_in' => array( 1 ),
+										'category__in' => array( 3, 10 ),
+										'offset' => 1
+									);
+									$secondary = new WP_Query( $args );
+									if ( $secondary->have_posts() ):
+										while ( $secondary->have_posts() ): $secondary->the_post();
+									?>
+									<div class="col-sm-6">
+										<?php get_template_part( 'template-parts/content', 'secondary'); ?>
+									</div>
+									<?php
+										endwhile;
+										wp_reset_postdata();
+									endif;	
 
-
-
-
-
-
-							
-							<?php 
-								endwhile;
-							else:
-							?>
-							 <p>There's nothing yet to be displayed...</p>
-							<?php endif; ?>
-
+									?>
+								</div>
+							</div>
 						</div>						
 					</div>
 				</div>				
