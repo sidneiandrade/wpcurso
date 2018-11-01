@@ -1,9 +1,34 @@
 <?php get_header(); ?>
 	<div class="content-area">
 		<main>
-			<section class="slide">
-				<div class="container">
-					<div class="row">Slide</div>
+			<section>
+				<div class="row">
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active carousel-fade">
+							<img class="d-block h-100" src="http://localhost:8181/wpcurso/wp-content/uploads/2018/10/perth-city-night-lights-time-lapse_4uz-m0vcke__F0000.png" alt="First slide">
+							</div>
+							<div class="carousel-item carousel-fade">
+							<img class="d-block h-100" src="http://localhost:8181/wpcurso/wp-content/uploads/2018/10/perth-city-night-lights-time-lapse_4uz-m0vcke__F0000.png" alt="Second slide">
+							</div>
+							<div class="carousel-item carousel-fade">
+							<img class="d-block h-100" src="http://localhost:8181/wpcurso/wp-content/uploads/2018/10/perth-city-night-lights-time-lapse_4uz-m0vcke__F0000.png" alt="Third slide">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
 				</div>
 			</section>
 			<section class="services">
