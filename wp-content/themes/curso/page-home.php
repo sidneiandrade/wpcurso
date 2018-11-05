@@ -1,10 +1,8 @@
 <?php get_header(); ?>
 	<div class="content-area">
 		<main>
-			<section>
-
-					
-
+			<section class="slider">
+				<?php echo do_shortcode( '[recent_post_slider design="design-2" show_date="false" show_author="false" limit="4" dots="false"]' ); ?>
 			</section>
 			<section class="services">
 				<div class="container">
