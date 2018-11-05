@@ -4,7 +4,9 @@
 function load_scripts(){
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '4.1.3', true );
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.1.3', 'all' );
+	wp_enqueue_style( 'Font Awesome', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css', array(), '5.5.0', 'all' );
 	wp_enqueue_style( 'template', get_template_directory_uri() . '/css/template.css', array(), '1.0', 'all' );
+	
 }
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
 
@@ -26,6 +28,7 @@ function wpcurso_config(){
 	add_theme_support( 'custom-header', $args );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'post-formats', array( 'video', 'image' ) );
+	add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'wpcurso_config', 0 );
 

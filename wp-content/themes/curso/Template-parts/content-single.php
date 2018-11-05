@@ -1,15 +1,24 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( array( ) ); ?>>
-    
     <header>
-        <h1><?php the_title(); ?></h1>
         <div class="meta-info">
-            <p>Posted in <?php echo get_the_date(); ?> by <span><?php the_author_posts_link(); ?></p>
-            <p>Categories: <?php the_category( ' ' ); ?></p>
-            <p><?php the_tags( 'Tags: <span>', ', ', '<span>' ); ?></p>
+            <?php the_post_thumbnail( 'full', array( 'class' => 'img-fluid' ) ); ?>
+            <div class="clearfix"></div>
+            <div class="col-sm-12">
+                <h2><?php the_title(); ?></h2>     
+            </div>
         </div>
     </header>
-    <div class="content">
-        <?php the_content(); ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 info-post">
+                <p><strong>Posted in</strong> <?php echo get_the_date(); ?> <br>
+                <strong>By</strong> <span><?php the_author_posts_link(); ?><br>
+                <strong>Categories:</strong> <?php the_category( ' ' ); ?><br>
+                <?php the_tags( '<strong>Tags:</strong> <span>', ', ', '<span>' ); ?></p>
+            </div>
+            <div class="col-sm-9 content">
+                <?php the_content(); ?>
+            </div>    
+        </div>
     </div>    
-
 </article>
