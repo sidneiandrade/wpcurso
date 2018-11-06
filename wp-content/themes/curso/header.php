@@ -27,7 +27,12 @@
 						); 
 						?>
 					</nav>
-					<section class="social-media-icons col-md-4 col-12 text-right">Media Social</section>					
+					<section class="social-media-icons col-md-4 col-12 text-right">
+					<?php if( is_active_sidebar( 'social-media' )){
+								dynamic_sidebar( 'social-media' );
+							}
+							?>
+					</section>					
 				</div>
 			</div>
 		</section>

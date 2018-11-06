@@ -13,7 +13,7 @@
                 <div class="col-sm-6">
                     <p>How about doing a search?</p>
                     <?php get_search_form(); ?>
-                    <?php the_widget( 'WP_Widget_Recent_Posts', array( 'title' => 'Last Posts', 'number' => 3)); ?>
+                    <?php the_widget( 'WP_Widget_Recent_Posts', array( 'title' => 'Last Posts', 'number' => 5)); ?>
                 </div>
             </div>
         </section>
