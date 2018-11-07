@@ -11,10 +11,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3 info-post">
-                <p><strong>Posted in</strong> <?php echo get_the_date(); ?> <br>
-                <strong>By</strong> <span><?php the_author_posts_link(); ?><br>
-                <strong>Categories:</strong> <?php the_category( ' ' ); ?><br>
-                <?php the_tags( '<strong>Tags:</strong> <span>', ', ', '<span>' ); ?></p>
+                <p><strong><?php _e('Posted in', 'wpcurso'): ?></strong> <?php echo get_the_date(); ?> <br>
+                <p><strong><?php _e('by', 'wpcurso'); ?></strong> <?php the_author_posts_link(); ?>
+                <p><strong><?php _e('Categories:', 'wpcurso'); ?></strong> <?php the_category( ' ' ); ?>
+                <?php the_tags( __('<strong>Tags: </strong>', 'wpcurso'), ', ' ); ?>
             </div>
             <div class="col-sm-9 content">
                 <?php the_content(); ?>

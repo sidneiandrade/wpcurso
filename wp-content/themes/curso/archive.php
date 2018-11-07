@@ -26,15 +26,15 @@
                             
                                 the_posts_pagination(
                                     array(
-                                        'prev_text' => 'Previous',
-                                        'next_text' => 'Next',
+                                        'prev_text' => __('Previous', 'wpcurso'),
+                                        'next_text' => __('Next', 'wpcurso'),
                                         'screen_reader_text' => ' '
                                     )
                                 );
                         
 							else:
 							?>
-							 <p>There's nothing yet to be displayed...</p>
+							 <p><?php _e( 'There&rsquo;s nothing yet to be displayed...', 'wpcurso'); ?></p>
 							<?php endif; ?>
 
 						</div>	

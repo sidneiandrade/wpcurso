@@ -2,8 +2,8 @@
 <div id="primary">
     <div id="main">
         <div class="container">
-            <h2>Resultado da pesquisa:</h2>
-            <p>Termo pesquisado:
+            <h2><?php _e('Resultado da pesquisa:', 'wpcurso'); ?></h2>
+            <p><?php _e('Termo pesquisado:', 'wpcurso'); ?>
                 <?php echo get_search_query(); ?></p>
             <?php 
                 get_search_form();
@@ -13,8 +13,8 @@
 
                 the_posts_pagination(
                     array(
-                        'prev_text' => 'Previous',
-                        'next_text' => 'Next',
+                        'prev_text' => __('Previous', 'wpcurso'),
+                        'next_text' => __('Next', 'wpcurso'),
                         'screen_reader_text' => ' '
                     )
                 );

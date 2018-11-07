@@ -5,15 +5,20 @@
             <div class="container">
                 <div class="error-404 col-sm-12">
                     <header>
-                        <h1>404</h1>
-                        <h2>Page not found</h2>      
-                        <p>Unfortunately, the page you tried ti reach does not exist on this site!</p>        
+                        <h1><?php _e( '404', 'wpcurso'); ?></h1>
+                        <h2><?php _e( 'Page not found', 'wpcurso'); ?></h2>      
+                        <p><?php _e( 'Unfortunately, the page you tried ti reach does not exist on this site!', 'wpcurso'); ?></p>        
                     </header>
                 </div>
                 <div class="col-sm-6">
-                    <p>How about doing a search?</p>
+                    <p><?php _e( 'How about doing a search?', 'wpcurso'); ?></p>
                     <?php get_search_form(); ?>
-                    <?php the_widget( 'WP_Widget_Recent_Posts', array( 'title' => 'Last Posts', 'number' => 5)); ?>
+                    <?php the_widget( 'WP_Widget_Recent_Posts', array(
+                        'title' => __( 'Last Posts', 'wpcurso' ), 
+                        'number' => 5
+                        )
+                    );
+                    ?>
                 </div>
             </div>
         </section>

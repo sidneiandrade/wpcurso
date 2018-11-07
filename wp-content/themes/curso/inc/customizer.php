@@ -5,23 +5,24 @@ function wpcurso_customizer($wp_customize){
     // Copyright
     $wp_customize->add_section(
         'sec_copyright', array( 
-            'title' => 'Copyright', //titulo da seção
-            'description' => 'Copyright Section' //descrição da seção
+            'title' => __('Copyright', 'wpcurso'), //titulo da seção
+            'description' => __('Copyright Section', 'wpcurso'), //descrição da seção
+            'priority' => 130 //ordenação da section
         )
     );
 
     $wp_customize->add_setting(
         'set_copyright', array(
             'type' => 'theme_mod', //usado sempre para modificar tema
-            'default' => 'Copyright x - All rights reserved', //texto em default
+            'default' => __('Copyright x - All rights reserved', 'wpcurso'), //texto em default
             'sanitize_callback' => 'wp_filter_nohtml_kses' //remove o html do texto
         )
     );
     
     $wp_customize->add_control(
         'set_copyright', array(
-            'label' => 'Copyright',
-            'description' => 'Choose whether to show the Services section or not',
+            'label' => __('Copyright', 'wpcurso'),
+            'description' => __('Choose whether to show the Services section or not', 'wpcurso'),
             'section' => 'sec_copyright',
             'type' => 'text'
         )
@@ -30,8 +31,9 @@ function wpcurso_customizer($wp_customize){
     // Maps
     $wp_customize->add_section(
         'sec_map', array( 
-            'title' => 'Map', //titulo da seção
-            'description' => 'Map Section' //descrição da seção
+            'title' => __('Map', 'wpcurso'), //titulo da seção
+            'description' => __('In this field you should get the Google Maps KEY API and add the address.', 'wpcurso'), //descrição da seção
+            'priority' => 125 //ordenação da section
         )
     );
     //Google Mpas API Key
@@ -45,8 +47,11 @@ function wpcurso_customizer($wp_customize){
     
     $wp_customize->add_control(
         'set_map_apikey', array(
-            'label' => 'API Key',
-            'description' => 'Get your key <a target="_blank" href="http://console.developers.google.com/flows/enableapi?apiid=maps_backend">here</a>',
+            'label' => __('API Key', 'wpcurso'),
+            'description' => sprintf(
+                __('Get your key <a target="_blank" href="%s">here</a>', 'wpcurso'),
+                'http://console.developers.google.com/flows/enableapi?apiid=maps_backend'
+                ),
             'section' => 'sec_map',
             'type' => 'text'
         )
@@ -62,8 +67,8 @@ function wpcurso_customizer($wp_customize){
     
     $wp_customize->add_control(
         'set_map_address', array(
-            'label' => 'Address',
-            'description' => 'No special caracters allowed.',
+            'label' => __('Address', 'wpcurso'),
+            'description' => __('No special caracters allowed.', 'wpcurso'),
             'section' => 'sec_map',
             'type' => 'textarea'    
         )
@@ -72,8 +77,8 @@ function wpcurso_customizer($wp_customize){
     // Slider
     $wp_customize->add_section(
         'sec_slider', array( 
-            'title' => 'Slider', //titulo da seção
-            'description' => 'Slider Section', //descrição da seção
+            'title' => __('Slider', 'wpcurso'), //titulo da seção
+            'description' => __('Slider Section', 'wpcurso'), //descrição da seção
             'priority' => 25, //ordenação da section
         )
     );
@@ -88,15 +93,15 @@ function wpcurso_customizer($wp_customize){
     
     $wp_customize->add_control(
         'set_slider_option', array(
-            'label' => 'Choose your design type here.',
-            'description' => 'Choose your design type.',
+            'label' => __('Choose your design type here.', 'wpcurso'),
+            'description' => __('Choose your design type.', 'wpcurso'),
             'section' => 'sec_slider',
             'type' => 'select',
             'choices' => array(
-                '1' => 'Design Type 1',
-                '2' => 'Design Type 2',
-                '3' => 'Design Type 3',
-                '4' => 'Design Type 4'
+                '1' => __('Design Type 1', 'wpcurso'),
+                '2' => __('Design Type 2', 'wpcurso'),
+                '3' => __('Design Type 3', 'wpcurso'),
+                '4' => __('Design Type 4', 'wpcurso')
             )    
         )
     );
@@ -111,8 +116,8 @@ function wpcurso_customizer($wp_customize){
     
     $wp_customize->add_control(
         'set_slider_limit', array(
-            'label' => 'Number of posts to display.',
-            'description' => 'Choose the number of post to be displayer.',
+            'label' => __('Number of posts to display.', 'wpcurso'),
+            'description' => __('Choose the number of post to be displayer.', 'wpcurso'),
             'section' => 'sec_slider',
             'type' => 'number', 
         )
@@ -130,12 +135,12 @@ function wpcurso_customizer($wp_customize){
     $wp_customize->add_control(
         'set_slider_date', array(
             'label' => 'Show date.',
-            'description' => 'Choose show date.',
+            'description' => __('Choose show date.', 'wpcurso'),
             'section' => 'sec_slider',
             'type' => 'select',
             'choices' => array(
-                'true' => 'Show',
-                'false' => 'Hidden'
+                'true' => __('Show', 'wpcurso'),
+                'false' => __('Hidden', 'wpcurso')
             )   
         )
     );
@@ -151,13 +156,13 @@ function wpcurso_customizer($wp_customize){
     
     $wp_customize->add_control(
         'set_slider_author', array(
-            'label' => 'Show author.',
-            'description' => 'Choose show author.',
+            'label' => __('Show author.', 'wpcurso'),
+            'description' => __('Choose show author.', 'wpcurso'),
             'section' => 'sec_slider',
             'type' => 'select',
             'choices' => array(
-                'true' => 'Show',
-                'false' => 'Hidden'
+                'true' => __('Show', 'wpcurso'),
+                'false' => __('Hidden', 'wpcurso')
             )   
         )
     );
@@ -173,13 +178,13 @@ function wpcurso_customizer($wp_customize){
     
     $wp_customize->add_control(
         'set_slider_more', array(
-            'label' => 'Show button more.',
-            'description' => 'Choose show button more.',
+            'label' => __('Show button more.', 'wpcurso'),
+            'description' => __('Choose show button more.', 'wpcurso'),
             'section' => 'sec_slider',
             'type' => 'select',
             'choices' => array(
-                'true' => 'Show',
-                'false' => 'Hidden'
+                'true' => __('Show', 'wpcurso'),
+                'false' => __('Hidden', 'wpcurso')
             )   
         )
     );
@@ -195,13 +200,13 @@ function wpcurso_customizer($wp_customize){
     
     $wp_customize->add_control(
         'set_slider_category', array(
-            'label' => 'Show category.',
-            'description' => 'Choose show category.',
+            'label' => __('Show category.', 'wpcurso'),
+            'description' => __('Choose show category.', 'wpcurso'),
             'section' => 'sec_slider',
             'type' => 'select',
             'choices' => array(
-                'true' => 'Show',
-                'false' => 'Hidden'
+                'true' => __('Show', 'wpcurso'),
+                'false' => __('Hidden', 'wpcurso')
             )   
         )
     );
