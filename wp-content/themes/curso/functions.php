@@ -1,5 +1,11 @@
 <?php 
 
+//Navigation Bootstrap Walker
+require_once get_template_directory() . '/Template-parts/wp-bootstrap-navwalker.php';
+
+//Customizer
+require get_template_directory() . '/inc/customizer.php';
+
 // Carregando nossos scripts e folhas de estilos
 function load_scripts(){
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '4.1.3', true );
@@ -29,6 +35,7 @@ function wpcurso_config(){
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'post-formats', array( 'video', 'image' ) );
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'custom-logo', array ('height' => 110, 'width' => 200 ) );
 }
 add_action( 'after_setup_theme', 'wpcurso_config', 0 );
 

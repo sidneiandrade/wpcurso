@@ -2,7 +2,14 @@
 	<div class="content-area">
 		<main>
 			<section class="slider">
-				<?php echo do_shortcode( '[recent_post_slider design="design-2" show_date="false" show_author="false" limit="4" dots="false"]' ); ?>
+			<?php 
+				$design = get_theme_mod('set_slider_option');
+				$limit = get_theme_mod('set_slider_limit');
+				$date = get_theme_mod('set_slider_date');
+				$author = get_theme_mod('set_slider_author');
+				$more = get_theme_mod('set_slider_more');
+				$category = get_theme_mod('set_slider_category');
+				echo do_shortcode( '[recent_post_slider design="design-' . $design . ' " show_date="' . $date . '" show_author="'.$author.'" limit=" ' . $limit . ' " dots="false" show_read_more="'.$more.'" show_category_name="'.$category.'"]' ); ?>
 			</section>
 			<section class="services">
 				<div class="container">
@@ -85,11 +92,16 @@
 				</div>				
 			</section>
 			<section class="map">
+				<?php 
+				$key = get_theme_mod('set_map_apikey');
+				$address = urlencode(get_theme_mod('set_map_address'));
+				?>
+
 			<iframe
 				width="100%"
 				height="350"
 				frameborder="0" style="border:0"
-				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC1h3ta8hXy4ROmUIyCus2gDROXOB5UE5k&q=Space+Needle,Seattle+WA&zoom=15" allowfullscreen>
+				src="https://www.google.com/maps/embed/v1/place?key=<?php echo $key; ?>&q=<?php echo $address; ?>&zoom=16" allowfullscreen>
 			</iframe>			
 			</section>
 		</main>
